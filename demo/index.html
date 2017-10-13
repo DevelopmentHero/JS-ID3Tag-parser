@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ID3Tagparser example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./ID3/ID3.js"></script>
+        <script>
+            let ResultList;
+            let CommonTags = Frame => Frame.ID in ID3.Frames;
+
+            function Init() {
+                ResultList = document.getElementById("result");
+            }
+            
+            function Parse(Input) {
+
+                var Reader = new FileReader();
+                Reader.onload = function () {
+                    
+                    for (; ResultList.hasChildNodes(); ResultList.removeChild(ResultList.lastChild));
+                    
+                    let Tag = ID3.Parse(this.result, false, 2);
+                    
+                    let Fragment = document.createDocumentFragment();
+                    
+                    for (const Frame of Tag.Frames.filter(CommonTags)) {
+                        
+                        let ListItem = document.createElement("li");
+                        
+                        if (Frame.ID === "APIC") {
+                            let Image = document.createElement("img");
+                            Image.src = window.URL.createObjectURL(Frame.Data);
+                            Image.style.width = "100px";
+                            ListItem.appendChild(Image);
+                            window.URL.revokeObjectURL(Frame.Data);
+                        } else {
+                            ListItem.textContent = `${typeof ID3.Frames[Frame.ID] !== "undefined" ? ID3.Frames[Frame.ID] : Frame.ID }: ${Frame.Data}`;
+                        }
+                        
+                        Fragment.appendChild(ListItem);
+                    }
+                    
+                    ResultList.appendChild(Fragment);
+                };
+                
+                Reader.readAsArrayBuffer(Input.files[0]);
+            }
+        </script>
+    </head>
+    <body onload="Init()">
+        Select file
+        <input type="file" onchange="Parse(this)">
+        <ul id="result"></ul>
+    </body>
+</html>
