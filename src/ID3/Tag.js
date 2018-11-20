@@ -6,7 +6,7 @@
  * @property {Object} Flags Gets or sets the flags of the Tag.
  * @property {Array<ID3.IFrame>} Frames Gets or sets the dataframes of the Tag.
  * @memberOf ID3
- * @author Kerry Holz <k.holz@artforge.eu>.
+ * @author Kerry Holz <developmenthero@gmail.com>.
  * @version 1.0.0.
  */
 ID3.Tag = class Tag {

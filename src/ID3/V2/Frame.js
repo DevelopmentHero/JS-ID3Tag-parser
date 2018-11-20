@@ -13,7 +13,7 @@
  * @property {Boolean} GroupingIdentity Gets a value indicating whether the frame belongs in a group with other frames.
  * @implements ID3.IFrame
  * @memberOf ID3.V2
- * @author Kerry Holz <k.holz@artforge.eu>.
+ * @author Kerry Holz <developmenthero@gmail.com>.
  * @version 1.0.0.
  */
 ID3.V2.Frame = class Frame extends ID3.IFrame {

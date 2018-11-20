@@ -12,7 +12,7 @@
  * @property {String} Description Gets the description-text of the PictureFrame.
  * @memberOf ID3.V2
  * @augments ID3.V2.Frame
- * @author Kerry Holz <k.holz@artforge.eu>.
+ * @author Kerry Holz <developmenthero@gmail.com>.
  * @version 1.0.0.
  */
 ID3.V2.PictureFrame = class PictureFrame extends ID3.V2.Frame {

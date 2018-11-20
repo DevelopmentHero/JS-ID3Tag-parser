@@ -3,7 +3,7 @@
  * Interface for classes that represent a dataframe of an ID3Tag.
  * @interface
  * @memberOf ID3
- * @author Kerry Holz <k.holz@artforge.eu>.
+ * @author Kerry Holz <developmenthero@gmail.com>.
  * @version 1.0.0.
  */
 ID3.IFrame = class IFrame {

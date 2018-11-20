@@ -5,7 +5,7 @@
  * @property {String} Data Gets or sets the data of the frame.
  * @implements ID3.IFrame
  * @memberOf ID3.V1
- * @author Kerry Holz <k.holz@artforge.eu>.
+ * @author Kerry Holz <developmenthero@gmail.com>.
  * @version 1.0.0.
  */
 ID3.V1.Frame = class Frame extends ID3.IFrame {

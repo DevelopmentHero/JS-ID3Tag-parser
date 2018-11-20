@@ -23,15 +23,12 @@ let ID3 = {
             //ID3v1.
             case Version <= 1 && ID3.ContainsTag(oView, 1):
                 return ID3.V1.Parse(oView, SkipEmptyFrames);
-                break;
                 //ID3v2.
             case Version >= 2 && ID3.ContainsTag(oView, 2):
                 return ID3.V2.Parse(oView, SkipEmptyFrames);
-                break;
                 //Empty tag.
             default:
                 return new ID3.Tag();
-                break;
     }
     },
     /**
@@ -61,14 +58,11 @@ let ID3 = {
             case 1:
                 //Check if the first 3 bytes at the end of the file, subtracting tag-size (128byte) contains the word 'TAG'.
                 return (View.getUint8(View.byteLength - 128) === 84 && View.getUint8(View.byteLength - 127) === 65 && View.getUint8(View.byteLength - 126) === 71);
-                break;
             case 2:
                 //Check if the first 3 bytes contain the word 'ID3'.
                 return (View.getUint8(0) === 73 && View.getUint8(1) === 68 && View.getUint8(2) === 51);
-                break;
             default:
                 return false;
-                break;
         }
     }
 };

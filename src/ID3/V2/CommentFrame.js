@@ -11,7 +11,7 @@
  * @property {String} ShortDescription Gets the shortdescription of the CommentFrame.
  * @memberOf ID3.V2
  * @augments ID3.V2.Frame
- * @author Kerry Holz <k.holz@artforge.eu>.
+ * @author Kerry Holz <developmenthero@gmail.com>.
  * @version 1.0.0.
  */
 ID3.V2.CommentFrame = class CommentFrame extends ID3.V2.Frame {

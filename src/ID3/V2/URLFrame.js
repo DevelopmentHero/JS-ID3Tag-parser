@@ -8,7 +8,7 @@
  * @property {String} Data Gets the data of the URLFrame.
  * @memberOf ID3.V2
  * @augments ID3.V2.Frame
- * @author Kerry Holz <k.holz@artforge.eu>.
+ * @author Kerry Holz <developmenthero@gmail.com>.
  * @version 1.0.0.
  */
 ID3.V2.URLFrame = class URLFrame extends ID3.V2.Frame {
