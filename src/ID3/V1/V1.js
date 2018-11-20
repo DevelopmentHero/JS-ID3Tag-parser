@@ -50,12 +50,7 @@ ID3.V1 = {
 
         //Check if empty frames should get skipped.
         if (SkipEmptyFrames) {
-            aoFrames = aoFrames.filter(Frame => {
-                if (typeof Frame.Data === "String" && Frame.Data.length === 0) {
-                    return false;
-                }
-                return true;
-            });
+            aoFrames = aoFrames.filter(Frame => !(typeof Frame.Data === "string" && Frame.Data.length === 0));
         }
 
         //Get genre.
